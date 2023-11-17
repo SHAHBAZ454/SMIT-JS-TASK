@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Login</title>
-  <script src="app.js"></script>
+  
 </head>
 <body>
 
@@ -25,6 +25,26 @@
 
 <p id="message"></p>
 
+<script>
+  function checkLogin() {
+    const enteredUsername = document.getElementById("username").value;
+    const enteredPassword = document.getElementById("password").value;
+    const correctUsername = "Shahbaz khan"; 
+    const correctPassword = "spiderman565";
+
+    if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
+      document.getElementById('message').textContent = 'Login successful!';
+      // You can redirect to another page or perform other actions upon successful login
+    } else {
+      document.getElementById('message').textContent = 'Incorrect username or password. Please try again.';
+    }
+  }
+
+  document.getElementById('showPassword').addEventListener('change', function() {
+    const passwordField = document.getElementById('password');
+    passwordField.type = this.checked ? 'text' : 'password';
+  });
+</script>
 
 </body>
 </html>
